@@ -2,7 +2,18 @@
 .portfolio{
     background-color: var(--tertiary-color);
     color: var(--quaternary-color);
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
+
+}
+.portfolio h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 3em;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
 }
 .portfolio-container {
     display: flex;
@@ -59,6 +70,25 @@
     margin: 10px;
     /* text-align: center; */
 }
+.portfolio nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* background-color: var(--secondary-color); */
+    padding: 10px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  box-shadow: 2px -1px 20px 4px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.4s ease;
+  animation: shadowFloat 4s ease-in-out infinite;
+  
+}
+.portfolio nav:hover {
+ box-shadow:
+    0 0 15px 2px rgba(255, 135, 9, 0.3),      /* jemný oranžový glow, nízka opacity */
+    5px -5px 40px 10px rgba(0, 0, 0, 0.15);   /* veľký, rozmazaný, jemný tieň */
+    animation: shadowPulse 4s ease-in-out infinite;
+}
 
 .portfolio nav label {
     color: var(--primary-color);
@@ -78,10 +108,41 @@
 }
 
 .portfolio nav input {
-    /* display: none; */
+    display: none;
 }
 
 .portfolio nav input:checked + nav {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--secondary-color);
+}
+
+.portfolio nav label:has(input[type="checkbox"]:checked) {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+}
+
+@keyframes shadowFloat {
+  0%, 100% {
+    box-shadow:
+      0 0 15px 2px rgba(255, 135, 9, 0.3),
+      5px -5px 40px 10px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow:
+      2px 2px 20px 3px rgba(255, 135, 9, 0.3),
+      7px -3px 45px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes shadowPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 15px 3px rgba(255, 135, 9, 0.6),
+      5px -5px 40px 10px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 30px 7px rgba(255, 135, 9, 0.9),
+      5px -5px 50px 15px rgba(0, 0, 0, 0.25);
+  }
 }

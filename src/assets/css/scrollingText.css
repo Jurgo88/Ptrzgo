@@ -99,6 +99,7 @@
     background-color: blueviolet;
     /* display: none; */
     /* opacity: 0; */
+    color: #000;
 }
 .extra-bubble{
     position: absolute;
